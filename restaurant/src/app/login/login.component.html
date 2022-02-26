@@ -1,19 +1,73 @@
-<div class="container col-md-6">
-    <h1 style="color: red;">Login</h1>
-    
-    <form (ngSubmit)="login()">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">user</label>
-            <input type="text" [(ngModel)]="user.name_user" class="form-control" id="name_user" name="name_user">
-        </div>
+<style>
+    /* app/styles.css */
 
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">password</label>
-            <input type="password" [(ngModel)]="user.pass_user" class="form-control" id="pass_user" name="pass_user">
-        </div>
+* {
+  box-sizing: border-box;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.custom-form {
+  min-width: 300px;
+  max-width: 30%;
+  margin: 0px auto;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem 3rem;
+  margin: auto;
+  border-radius: 2.5rem;
+  background-color: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  color: black;
+  margin-top: 10rem;
+}
+.custom-form input {
+  display: block;
+  
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+      rgba(0, 0, 0, 0.1);
+  border: 0 none;
+  background: #ebf5fc;
+}
+.custom-form button {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: none;
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #bcd8c1;
+  width: 100%;
+  display: block;
+  padding: 0.875rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+  cursor: pointer;
+}
 
-        <button type="submit" class="btn btn-primary">Login</button>
-    </form>
+</style>
+
+    <div class="login">
+        <form (ngSubmit)="login()" class="custom-form">
+            
+            <div class="mb-3">
+                <h1>Login</h1>
+            </div>
+            <div class="mb-3">
+                <input type="text" [(ngModel)]="user.name_user" class="form-control" id="name_user" name="name_user" placeholder="User">
+            </div>
     
-</div>
+            <div class="mb-3">
+                <input type="password" [(ngModel)]="user.pass_user" class="form-control" id="pass_user" name="pass_user" placeholder="Password">
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
 
